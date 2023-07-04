@@ -2,7 +2,7 @@ package profiles
 
 import (
 	"context"
-	"thedcsherman/htmx/utils"
+	"thedcsherman/htmx/internal/utils"
 )
 
 type ProfileService struct {
@@ -24,7 +24,7 @@ func NewProfileService(connection utils.PgxIface) ProfileIface {
 func (p *ProfileService) GetProfile(ctx context.Context, id string) (*Profile, error) {
 	var profile Profile
 
-	query := `SELECT blah FROM profiles;`
+	query := `SELECT username FROM profiles;`
 	err := p.connection.QueryRow(ctx, query).Scan(&profile.Username)
 
 	if err != nil {

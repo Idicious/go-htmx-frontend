@@ -2,7 +2,7 @@ package profiles
 
 import (
 	"net/http"
-	"thedcsherman/htmx/utils"
+	"thedcsherman/htmx/internal/utils"
 
 	"github.com/gin-gonic/gin"
 )

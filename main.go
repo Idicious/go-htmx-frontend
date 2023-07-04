@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	"thedcsherman/htmx/profiles"
+	"thedcsherman/htmx/internal/profiles"
 
 	"github.com/gin-gonic/gin"
 	"github.com/jackc/pgx/v5"
@@ -27,8 +27,8 @@ func main() {
 
 	r := gin.Default()
 
-	r.Static("/public", "./public")
-	r.LoadHTMLGlob("templates/*")
+	r.Static("/public", "./web/public")
+	r.LoadHTMLGlob("./web/templates/*")
 
 	profile_service := profiles.NewProfileService(conn)
 
