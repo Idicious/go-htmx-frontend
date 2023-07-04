@@ -1,0 +1,19 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 54322,
+            "driver": "PostgreSQL",
+            "name": "DB",
+            "database": "postgres",
+            "username": "postgres"
+        }
+    ],
+    "inlineSQL.enableDBIntegration": true,
+    "inlineSQL.dbDriver": "postgres",
+    "inlineSQL.dbHost": "localhost",
+    "inlineSQL.dbPort": 54322,
+    "inlineSQL.dbUser": "postgres",
+    "inlineSQL.dbPassword": "postgres",
+}

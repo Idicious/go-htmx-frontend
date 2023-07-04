@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HTMX Boilerplate</title>
+    <script src="https://unpkg.com/htmx.org/dist/htmx.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-100">
+    <h1 class="text-lg font-bold">HTMX Boilerplate</h1>
+    <p>This is a boilerplate page for using HTMX.</p>
+    <button hx-get="/api/profile" hx-target="#data">Load Data</button>
+    <div id="data"></div>
+
+    <p hx-get="/api/profile" hx-trigger="revealed">Initial text</p>
+</body>
+</html>

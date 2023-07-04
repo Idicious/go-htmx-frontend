@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "golang.go",
+        "jinliming2.vscode-go-template",
+        "qufiwefefwoyn.inline-sql-syntax",
+        "mtxr.sqltools",
+        "mtxr.sqltools-driver-pg",
+        "dz4k.vscode-hyperscript-org",
+        "otovo-oss.htmx-tags"
+    ]
+
+}
