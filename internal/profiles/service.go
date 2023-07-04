@@ -2,11 +2,11 @@ package profiles
 
 import (
 	"context"
-	"thedcsherman/htmx/internal/utils"
+	"thedcsherman/htmx/internal/db"
 )
 
 type ProfileService struct {
-	connection utils.PgxIface
+	connection db.PgxIface
 }
 
 type ProfileIface interface {
@@ -17,7 +17,7 @@ type Profile struct {
 	Username string
 }
 
-func NewProfileService(connection utils.PgxIface) ProfileIface {
+func NewProfileService(connection db.PgxIface) ProfileIface {
 	return &ProfileService{connection: connection}
 }
 
