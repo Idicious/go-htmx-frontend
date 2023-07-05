@@ -1,17 +1,17 @@
 services:
-  server:
-    image: go-server
-    restart: always
-    build: 
-      context: .
-      args:
-        MODE: debug
-    ports:
-      - "4200:8080"
-    depends_on:
-      - db
-    environment:
-      - DATABASE_URL=postgres://postgres:postgres@db:5432/postgres
+  # server:
+  #   image: go-server
+  #   restart: always
+  #   build: 
+  #     context: .
+  #     args:
+  #       MODE: debug
+  #   ports:
+  #     - "4200:8080"
+  #   depends_on:
+  #     - db
+  #   environment:
+  #     - DATABASE_URL=postgres://postgres:postgres@db:5432/postgres
   db:
     image: postgres
     restart: always
