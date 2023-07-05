@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . .
 
 RUN go mod download
-RUN go build -ldflags "-s -w" -o main .
+RUN go build -ldflags "-s -w" -o bin/main .
 
 FROM debian:bullseye-20230703-slim
 
@@ -17,7 +17,7 @@ RUN useradd -ms /bin/bash appuser
 USER appuser
 WORKDIR /home/appuser/app
 
-COPY --from=builder /app/main .
+COPY --from=builder /app/bin/main .
 COPY --from=builder /app/web web/ 
 
 EXPOSE 8080
