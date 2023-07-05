@@ -3,8 +3,8 @@ FROM golang:1.21-rc-bullseye AS builder
 WORKDIR /app
 COPY . .
 
-RUN go mod download
-RUN go build -ldflags "-s -w" -o bin/main .
+RUN apk add npm
+RUN make build 
 
 FROM debian:bullseye-20230703-slim
 
