@@ -1,0 +1,25 @@
+FROM golang:1.21-rc-bullseye AS builder
+
+WORKDIR /app
+COPY . .
+
+RUN go mod download
+RUN go build -ldflags "-s -w" -o main .
+
+FROM debian:bullseye-slim
+
+ARG MODE=release
+
+ENV GIN_MODE=$MODE
+
+RUN useradd -ms /bin/bash appuser
+
+USER appuser
+WORKDIR /home/appuser/app
+
+COPY --from=builder /app/main .
+COPY --from=builder /app/web web/ 
+
+EXPOSE 8080
+
+ENTRYPOINT ["./main"]
