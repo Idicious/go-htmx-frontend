@@ -6,7 +6,7 @@ COPY . .
 RUN go mod download
 RUN go build -ldflags "-s -w" -o main .
 
-FROM debian:bullseye-slim
+FROM debian:bullseye-20230703-slim
 
 ARG MODE=release
 
