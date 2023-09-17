@@ -6,7 +6,9 @@
         "mtxr.sqltools",
         "mtxr.sqltools-driver-pg",
         "dz4k.vscode-hyperscript-org",
-        "otovo-oss.htmx-tags"
+        "otovo-oss.htmx-tags",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.makefile-tools"
     ]
 
 }
