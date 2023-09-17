@@ -27,7 +27,7 @@ func TestGetProfile(t *testing.T) {
 		profile, err := profile_service.GetProfile(ctx, "1")
 
 		assert.NoError(t, err)
-		assert.Equal(t, profile, Profile{Username: "thedcsherman"})
+		assert.Equal(t, profile, &Profile{Username: "thedcsherman"})
 	})
 
 	t.Run("should return an error", func(t *testing.T) {
@@ -45,6 +45,6 @@ func TestGetProfile(t *testing.T) {
 		profile, err := profile_service.GetProfile(ctx, "1")
 
 		assert.Error(t, err, errors.New("db error"))
-		assert.Equal(t, profile, Profile{})
+		assert.Equal(t, profile, &Profile{})
 	})
 }
